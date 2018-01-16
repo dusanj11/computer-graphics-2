@@ -1,0 +1,29 @@
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\MainWindow.g.cs
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\App.g.cs
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3_MarkupCompile.cache
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3_MarkupCompile.lref
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\bin\Debug\PZ3.exe.config
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\bin\Debug\PZ3.exe
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\bin\Debug\PZ3.pdb
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\MainWindow.baml
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3.g.resources
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3.Properties.Resources.resources
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3.csproj.GenerateResource.Cache
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3.exe
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3.pdb
+C:\Users\dusan\Documents\FAKS 4\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3.csprojResolveAssemblyReference.cache
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\bin\Debug\PZ3.exe.config
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\bin\Debug\PZ3.exe
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\bin\Debug\PZ3.pdb
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3.csprojResolveAssemblyReference.cache
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\MainWindow.g.cs
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\App.g.cs
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3_MarkupCompile.cache
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3_MarkupCompile.lref
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\MainWindow.baml
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3.g.resources
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3.Properties.Resources.resources
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3.csproj.GenerateResource.Cache
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3.csproj.CoreCompileInputs.cache
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3.exe
+E:\USB\BLOK 5 (RG)\PZ3\PZ3\PZ3\obj\Debug\PZ3.pdb

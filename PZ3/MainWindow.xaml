@@ -1,0 +1,205 @@
+﻿<Window x:Class="PZ3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PZ3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ToolBar x:Name="tulbar" Grid.Row="0">
+            <CheckBox Checked="prviChecked"  Unchecked="prviUnchecked">0-1</CheckBox>
+            <CheckBox Checked="drugiChecked" Unchecked="drugiUnchecked">1-2</CheckBox>
+            <CheckBox Checked="treciChecked" Unchecked="treciUnchecked">2</CheckBox>
+        </ToolBar>
+        <Viewport3D x:Name="vjuport"  Grid.Row="1" MouseLeftButtonUp="panMouseLeftButtonUp" MouseWheel="zoomMouseWheel" MouseLeftButtonDown="panMouseLeftButtonDown" MouseMove="panMouseMove" MouseDown="rotacijaWheel" MouseUp="rotacijaWheelUp">
+
+            <Viewport3D.Camera>
+                <PerspectiveCamera x:Name="kamera" Position="200,200,200" LookDirection="-100,-200,-100"/>
+            </Viewport3D.Camera>
+            <!-- Button on 3D -->
+            <Viewport2DVisual3D>
+                <!--2d objekat ce prikazati u 3d-->
+                <!-- Give the plane a slight rotation -->
+                <Viewport2DVisual3D.Transform>
+                    <Transform3DGroup>
+                        <RotateTransform3D>
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D Angle="0" Axis="0, 1, 0" />
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                        <RotateTransform3D CenterX="100" CenterY="0" CenterZ="100">
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D x:Name="mapaPoZ" Angle="0" Axis="1, 0, 0" />
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                        <RotateTransform3D CenterX="100" CenterY="0" CenterZ="100">
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D x:Name="mapaPoX" Angle="0" Axis="0, 0, 1" />
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                        <TranslateTransform3D x:Name="translacija" OffsetX="0" OffsetY="0" OffsetZ="0"/>
+                        <ScaleTransform3D x:Name="skaliranje" ScaleX="1" ScaleY="1" ScaleZ="1"/>
+                    </Transform3DGroup>
+                </Viewport2DVisual3D.Transform>
+
+                <!-- The Geometry, Material, and Visual for the Viewport2DVisual3D -->
+                <Viewport2DVisual3D.Geometry>
+                    <MeshGeometry3D Positions="0,0,0  200,0,0  200,0,200  0,0,200"
+                            TextureCoordinates="0,0 1,0 1,1 0,1" TriangleIndices="2 1 0 2 0 3"/>
+                    <!--bez texture coordinates dugme nece biti nacrtano-->
+                </Viewport2DVisual3D.Geometry>
+
+                <Viewport2DVisual3D.Material>
+                    <DiffuseMaterial Viewport2DVisual3D.IsVisualHostMaterial="True"/>
+                    <!--ovaj dug property, bez njega nece raditi klik, sa njim radi BITNO BITNO BITNO BITNO-->
+                </Viewport2DVisual3D.Material>
+
+                <Image Source="slike/map.jpg"></Image>
+            </Viewport2DVisual3D>
+
+            <!-- Lights -->
+            <ModelVisual3D>
+                <ModelVisual3D.Transform>
+                    <Transform3DGroup>
+                      <RotateTransform3D CenterX="100" CenterY="0" CenterZ="100">
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D x:Name="elementiPoZ" Angle="0" Axis="1, 0, 0" />
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                      <RotateTransform3D CenterX="100" CenterY="0" CenterZ="100">
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D x:Name="elementiPoX" Angle="0" Axis="0, 0, 1" />
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                   </Transform3DGroup>
+                </ModelVisual3D.Transform>
+                <ModelVisual3D.Content>
+                    <Model3DGroup x:Name="grupica">
+                        <DirectionalLight Color="White"  Direction="-1,-1,0"/>
+                        <!--<SpotLight Range="10000" Color="White" Position="1.5,1,2.5" Direction="-1,-1,-3"></SpotLight>-->
+                        <!--<PointLight Color="White" Position="1.5,1,2.5" ></PointLight>-->
+                        <Model3DGroup.Transform>
+                            <Transform3DGroup>
+                                <RotateTransform3D>
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D Angle="90" Axis="0, 1, 0" />
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                                <TranslateTransform3D  OffsetX="0" OffsetY="0" OffsetZ="200"/>
+                            </Transform3DGroup>
+                        </Model3DGroup.Transform>
+                    </Model3DGroup>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+
+            <ModelVisual3D>
+                <ModelVisual3D.Transform>
+                    <Transform3DGroup>
+                        <RotateTransform3D CenterX="100" CenterY="0" CenterZ="100">
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D x:Name="prveLinijePoZ" Angle="0" Axis="1, 0, 0" />
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                        <RotateTransform3D CenterX="100" CenterY="0" CenterZ="100">
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D x:Name="prveLinijePoX" Angle="0" Axis="0, 0, 1" />
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                    </Transform3DGroup>
+                </ModelVisual3D.Transform>
+                <ModelVisual3D.Content>
+                    <Model3DGroup x:Name="prveLinije">
+                        <DirectionalLight Color="White"  Direction="-1,-1,0"/>
+                        <!--<SpotLight Range="10000" Color="White" Position="1.5,1,2.5" Direction="-1,-1,-3"></SpotLight>-->
+                        <!--<PointLight Color="White" Position="1.5,1,2.5" ></PointLight>-->
+                        <Model3DGroup.Transform>
+                            <Transform3DGroup>
+                                <RotateTransform3D>
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D Angle="90" Axis="0, 1, 0" />
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+
+                                <TranslateTransform3D  OffsetX="0" OffsetY="0" OffsetZ="200"/>
+                            </Transform3DGroup>
+                        </Model3DGroup.Transform>
+                    </Model3DGroup>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+
+            <ModelVisual3D>
+                <ModelVisual3D.Transform>
+                    <Transform3DGroup>
+                        <RotateTransform3D CenterX="100" CenterY="0" CenterZ="100">
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D x:Name="drugeLinijePoZ" Angle="0" Axis="1, 0, 0" />
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                        <RotateTransform3D CenterX="100" CenterY="0" CenterZ="100">
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D x:Name="drugeLinijePoX" Angle="0" Axis="0, 0, 1" />
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                    </Transform3DGroup>
+                </ModelVisual3D.Transform>
+                <ModelVisual3D.Content>
+                    <Model3DGroup x:Name="drugeLinije">
+                        <DirectionalLight Color="White"  Direction="-1,-1,0"/>
+                        <!--<SpotLight Range="10000" Color="White" Position="1.5,1,2.5" Direction="-1,-1,-3"></SpotLight>-->
+                        <!--<PointLight Color="White" Position="1.5,1,2.5" ></PointLight>-->
+                        <Model3DGroup.Transform>
+                            <Transform3DGroup>
+                                <RotateTransform3D>
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D Angle="90" Axis="0, 1, 0" />
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                                <TranslateTransform3D  OffsetX="0" OffsetY="0" OffsetZ="200"/>
+                            </Transform3DGroup>
+                        </Model3DGroup.Transform>
+                    </Model3DGroup>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+
+            <ModelVisual3D>
+                <ModelVisual3D.Transform>
+                    <Transform3DGroup>
+                        <RotateTransform3D CenterX="100" CenterY="0" CenterZ="100">
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D x:Name="treceLinijePoZ" Angle="0" Axis="1, 0, 0" />
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                        <RotateTransform3D CenterX="100" CenterY="0" CenterZ="100">
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D x:Name="treceLinijePoX" Angle="0" Axis="0, 0, 1" />
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                    </Transform3DGroup>
+                </ModelVisual3D.Transform>
+                <ModelVisual3D.Content>
+                    <Model3DGroup x:Name="treceLinije">
+                        <DirectionalLight Color="White"  Direction="-1,-1,0"/>
+                        <!--<SpotLight Range="10000" Color="White" Position="1.5,1,2.5" Direction="-1,-1,-3"></SpotLight>-->
+                        <!--<PointLight Color="White" Position="1.5,1,2.5" ></PointLight>-->
+                        <Model3DGroup.Transform>
+                            <Transform3DGroup>
+                                <RotateTransform3D>
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D Angle="90" Axis="0, 1, 0" />
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                                <TranslateTransform3D  OffsetX="0" OffsetY="0" OffsetZ="200"/>
+                            </Transform3DGroup>
+                        </Model3DGroup.Transform>
+                    </Model3DGroup>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+        </Viewport3D>
+
+    </Grid>
+</Window>
